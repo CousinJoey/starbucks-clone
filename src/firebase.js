@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBRkB1TmAeWettYTaD6Hz_-lLYbImhRFdk",
@@ -69,3 +70,74 @@ export async function fetchMenu() {
 
   return items;
 }
+
+export async function fetchRewards() {
+  const colRef = collection(db, "rewards");
+  const docsSnap = await getDocs(colRef);
+
+  const items = [];
+
+  docsSnap.forEach((doc) => {
+    const data = doc.data();
+    items.push({
+      name: data.name,
+      src: data.src,
+    });
+  });
+
+  return items;
+}
+
+const storage = getStorage();
+const fileRefs = [
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-how-to-earn/giftCard2.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-delta/delta-background.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-filler/1.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-filler/3.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-filler/2.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-how-to-earn/card.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-how-to-earn/gift-card.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-how-to-earn/phone-card.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-how-to-earn/phone.png"
+  ),
+  ref(
+    storage,
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-delta/fake-delta.png"
+  ),
+];
+
+fileRefs.forEach((fileRef) => {
+  getDownloadURL(fileRef)
+    .then((url) => {
+      console.log("File download URL:", url);
+    })
+    .catch((error) => {
+      console.error("Error getting file download URL:", error);
+    });
+});

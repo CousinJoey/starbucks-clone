@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./style.css";
 
-function App({ menuItems, featuredItems, logoItems }) {
+function App({ menuItems, featuredItems, logoItems, rewardItems }) {
   console.log(menuItems);
 
   return (
@@ -22,7 +22,10 @@ function App({ menuItems, featuredItems, logoItems }) {
             path="/menu"
             element={<Menu menuItems={menuItems} logoData={logoItems} />}
           />
-          <Route path="/rewards" element={<Rewards logoData={logoItems} />} />
+          <Route
+            path="/rewards"
+            element={<Rewards rewardItems={rewardItems} logoData={logoItems} />}
+          />
         </Routes>
       </div>
     </Router>
@@ -33,6 +36,7 @@ App.propTypes = {
   menuItems: PropTypes.object.isRequired,
   logoItems: PropTypes.object.isRequired,
   featuredItems: PropTypes.object.isRequired,
+  rewardItems: PropTypes.object.isRequired,
 };
 
 export default App;

@@ -6,8 +6,6 @@ import { mdiMapMarker } from "@mdi/js";
 import "../../style.css";
 
 function Navbar({ data }) {
-  console.log(data);
-
   return (
     <header className="header">
       <nav className="nav">
