@@ -236,6 +236,7 @@ h3 {
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.1em;
+  color: white;
 }
 
 .header-container {
@@ -255,7 +256,7 @@ h3 {
   justify-content: center;
   align-items: flex-start;
   height: 100%;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 .header-img {
@@ -442,6 +443,217 @@ h3 {
 
 .reward-title {
   font-weight: 600;
+}
+
+.extras-main {
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+}
+
+.extras-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.extras-hero-text {
+  text-align: center;
+  width: 500px;
+  padding-bottom: 2.4rem;
+}
+
+.extras-img {
+  width: 112px;
+  height: 112px;
+}
+
+.extras-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.extras-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.extras-info-text {
+  text-align: center;
+  width: 300px;
+}
+
+.extras-text-title {
+  font-weight: 600;
+}
+
+.extras-hero-title {
+  font-weight: 600;
+}
+
+.extras-text {
+  font-size: 1.1rem;
+}
+
+.extras-button {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  text-decoration: underline;
+  color: #ffbd59;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.savings-main {
+  background-color: #f2f0eb;
+}
+
+.savings-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2.4rem;
+  padding-bottom: 4.6rem;
+}
+
+.one-bee-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  padding-left: 4.4rem;
+  padding-right: 4.4rem;
+  margin-bottom: 2.2rem;
+}
+
+.savings-grid-item {
+  display: flex;
+}
+
+.savings-grid-image-container {
+  margin-right: 1.2rem;
+}
+
+.savings-grid-image {
+  width: 112px;
+  height: 158px;
+}
+
+.savings-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.savings-text {
+  width: 80%;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.savings-hero-subtext {
+  text-align: center;
+  width: 50%;
+}
+
+.savings-grid-text-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.savings-hr {
+  margin-bottom: 2.6rem;
+  margin-left: 4.5rem;
+  margin-right: 4.5rem;
+}
+
+.two-bee-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  padding-left: 4.4rem;
+  padding-right: 4.4rem;
+  padding-bottom: 2.6rem;
+}
+
+.bee-text {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
+}
+
+.bee-subtext {
+  margin: 0;
+}
+
+.bee-svg {
+  display: flex;
+}
+
+.delta-main {
+  padding: 1.6rem;
+  background-color: #ffbd59;
+}
+
+.delta-container {
+  background-color: bisque;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.delta-hero-text {
+  width: 50%;
+}
+
+.delta-img-and-text-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin-left: 3.2rem;
+  margin-right: 3.6rem;
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+}
+
+.delta-text-and-logo-subcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delta-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delta-logo {
+  width: 40%;
+}
+.delta-text {
+  text-align: center;
+  width: 50%;
+}
+.delta-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delta-hero-title {
+  font-weight: 600;
+  margin: 0;
 }
 
 /* Rewards Page */

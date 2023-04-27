@@ -128,7 +128,7 @@ const fileRefs = [
   ),
   ref(
     storage,
-    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-delta/fake-delta.png"
+    "gs://starbucks-clone-34c1a.appspot.com/Images/rewards-how-to-earn/giftCard2-trans.png"
   ),
 ];
 
