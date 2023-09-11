@@ -1,5 +1,4 @@
-[DFDA1D4A-3C2C-458B-A75E-3DCBE974F563](https://github.com/CousinJoey/starbucks-clone/assets/111305016/22dbaa98-a60f-4cc0-ba36-83defa733ba8)
-
+<img width="1437" alt="image" src="https://github.com/CousinJoey/starbucks-clone/assets/111305016/aadd2db3-2dce-46dc-ad4b-d9f691e0427c">
 
 
 # Getting Started with Create React App!
