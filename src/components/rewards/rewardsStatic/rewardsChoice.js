@@ -26,7 +26,7 @@ function RewardsChoice() {
           >
             {" "}
             25
-            <Icon path={mdiBee} size={1.5} />
+            <Icon className="rewards-bee" path={mdiBee} size={1.5} />
           </button>
           <button
             className={
@@ -36,7 +36,7 @@ function RewardsChoice() {
           >
             {" "}
             100
-            <Icon path={mdiBee} size={1.5} />
+            <Icon className="rewards-bee" path={mdiBee} size={1.5} />
           </button>
           <button
             className={
@@ -46,7 +46,7 @@ function RewardsChoice() {
           >
             {" "}
             200
-            <Icon path={mdiBee} size={1.5} />
+            <Icon className="rewards-bee" path={mdiBee} size={1.5} />
           </button>
           <button
             className={
@@ -56,7 +56,7 @@ function RewardsChoice() {
           >
             {" "}
             300
-            <Icon path={mdiBee} size={1.5} />
+            <Icon className="rewards-bee" path={mdiBee} size={1.5} />
           </button>
         </div>
         <div className="rewards-text-container">

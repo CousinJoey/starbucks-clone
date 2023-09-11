@@ -17,7 +17,7 @@ function RewardsSavings({ rewardItems }) {
   return (
     <div className="savings-main">
       <div className="savings-hero">
-        <h2>Cash or card, you earn Bees</h2>
+        <h2 className="savings-hero-text">Cash or card, you earn Bees</h2>
         <p className="savings-hero-subtext">
           No matter how you pay, you can earn Bees with your morning coffee.
           Those Bees add up to (really delicious) Rewards.
