@@ -1,8 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Navbar from "../navbar/navbar";
+import { useNavigate } from "react-router-dom";
+function Homepage({ newItems, logoData, menuItems }) {
+  let navigate = useNavigate();
 
-function Homepage({ newItems, logoData }) {
+  const nameToTitleMapping = {
+    toast: "Avocado Toast",
+    smoothie: "Triple Berry Smoothie",
+    cupcakes: "Cupcake",
+    yogurt: "Parfait",
+  };
+
+  const handleClick = (name) => {
+    const title = nameToTitleMapping[name];
+    const matchedMenuItem = menuItems.find(
+      (menuItem) => menuItem.title === title
+    );
+
+    if (matchedMenuItem) {
+      const data = logoData;
+
+      const state = { product: matchedMenuItem, data };
+      navigate(`/product/${matchedMenuItem.title}`, { state });
+    }
+  };
+
   return (
     <div>
       <Navbar data={logoData} />
@@ -21,7 +44,7 @@ function Homepage({ newItems, logoData }) {
                   <div>
                     <h3 className="featured-title">{items.title}</h3>
                     <p className="featured-desc">
-                      Fresh hand-cut avacado ontop of Cherub tomatos and
+                      Fresh hand-cut avocado ontop of Cherub tomatos and
                       arugula, with seasonings and spices to match your cravings
                     </p>
                   </div>
@@ -53,7 +76,12 @@ function Homepage({ newItems, logoData }) {
                     </p>
                   </div>
                 )}
-                <div className="default-button">Order Now</div>
+                <div
+                  className="default-button"
+                  onClick={() => handleClick(items.name)}
+                >
+                  Order Now
+                </div>
               </div>
             </div>
           ))}
@@ -66,6 +94,7 @@ function Homepage({ newItems, logoData }) {
 Homepage.propTypes = {
   newItems: PropTypes.array.isRequired,
   logoData: PropTypes.array.isRequired,
+  menuItems: PropTypes.array.isRequired,
 };
 
 export default Homepage;
