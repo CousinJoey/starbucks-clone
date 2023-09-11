@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Navbar from "../navbar/navbar";
 import MenuSidebar from "./menuSidebar/menuSidebar";
 import MenuSections from "./menuSubcomponents/menuSections";
 import MenuBanner from "./menuStatic/menuBanner";
 import MenuAllView from "./menuStatic/menuAllView";
+import Favorites from "./menuStatic/menuBannerSubComponents/favorites";
+import PreviousOrders from "./menuStatic/menuBannerSubComponents/previousOrders";
+import { useLocation } from "react-router-dom";
 
-function Menu({ menuItems, logoData }) {
+function Menu({
+  menuItems,
+  logoData,
+  fetchUserFavorites,
+  addItemToCart,
+  removeFromFavorites,
+  fetchUserHistory,
+}) {
+  const location = useLocation();
+
   const [menuBannerValue, setMenuBannerValue] = useState("all");
   const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    if (location.state && location.state.filter) {
+      setMenuBannerValue(location.state.filter);
+    }
+  }, [location.state]);
 
   const handleFilterChange = (category) => {
     setFilter(category);
@@ -19,7 +37,9 @@ function Menu({ menuItems, logoData }) {
     setFilter("all");
   };
 
-  // creating key:pair objects for filtering based upon different values
+  const handleBackClick = () => {
+    setFilter("all");
+  };
 
   const menuMap = {};
   const specificMap = {};
@@ -50,11 +70,12 @@ function Menu({ menuItems, logoData }) {
 
   return (
     <div>
-      <Navbar data={logoData} />
+      <Navbar data={logoData} from={"menu"} />
       <MenuBanner onBannerChange={handleBannerChange} />
       {menuBannerValue === "all" ? (
         <main className="menu-main">
           <MenuSidebar
+            className="menu-side-bar"
             onFilterChange={handleFilterChange}
             menuItems={menuItems}
           />
@@ -75,6 +96,7 @@ function Menu({ menuItems, logoData }) {
                           subHeadingMap={subHeadingMap}
                           filteringMap={filteringMap}
                           data={logoData}
+                          handleBack={handleBackClick}
                         />
                       </>
                     </section>
@@ -86,18 +108,17 @@ function Menu({ menuItems, logoData }) {
         </main>
       ) : null}
       {menuBannerValue === "previous" && (
-        <main className="main-menu-alt">
-          <div>
-            <p>Previous </p>
-          </div>
-        </main>
+        <PreviousOrders
+          fetchUserHistory={fetchUserHistory}
+          addItemToCart={addItemToCart}
+        />
       )}
       {menuBannerValue === "favorite" && (
-        <main className="main-menu-alt">
-          <div>
-            <p>Favorites </p>
-          </div>
-        </main>
+        <Favorites
+          fetchUserFavorites={fetchUserFavorites}
+          addItemToCart={addItemToCart}
+          removeFromFavorites={removeFromFavorites}
+        />
       )}
     </div>
   );
@@ -106,6 +127,10 @@ function Menu({ menuItems, logoData }) {
 Menu.propTypes = {
   menuItems: PropTypes.array.isRequired,
   logoData: PropTypes.array.isRequired,
+  fetchUserFavorites: PropTypes.func.isRequired,
+  addItemToCart: PropTypes.func.isRequired,
+  removeFromFavorites: PropTypes.func.isRequired,
+  fetchUserHistory: PropTypes.func.isRequired,
 };
 
 export default Menu;
