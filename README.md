@@ -1,5 +1,7 @@
 <img width="1437" alt="image" src="https://github.com/CousinJoey/starbucks-clone/assets/111305016/aadd2db3-2dce-46dc-ad4b-d9f691e0427c">
 
+Link to video demo: https://youtu.be/yYu4_uO1lkI
+
 
 # Getting Started with Create React App!
 
