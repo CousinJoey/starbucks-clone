@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+[DFDA1D4A-3C2C-458B-A75E-3DCBE974F563](https://github.com/CousinJoey/starbucks-clone/assets/111305016/22dbaa98-a60f-4cc0-ba36-83defa733ba8)
+
+
+
+# Getting Started with Create React App!
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
